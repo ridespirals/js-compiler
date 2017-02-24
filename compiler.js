@@ -1,4 +1,4 @@
-const tokenizer = require('./tokenizer').tokenizer
+const tokenizer = require('./tokenizer')
 const parser = require('./parser')
 const emitter = require('./emitter')
 

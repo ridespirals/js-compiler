@@ -1,18 +1,37 @@
 const chai = require('chai')
 const expect = chai.expect
 
+describe('tokenizer internals', () => {
+
+    let tokenizer = null
+    let tokenizers = null
+
+    beforeEach(() => {
+        const mod = require('./tokenizer')
+        tokenizer = mod.tokenizer
+        tokenizers = mod.tokenizers
+    })
+
+
+    it('should skip whitespace', () => {
+
+    })
+
+
+})
+
 describe('tokenizer', () => {
 
     let tokenizer = null
 
     beforeEach(() => {
-        tokenizer = require('./tokenizer').tokenizer
+        tokenizer = require('./tokenizer')
     })
-
+    
     it('should exist', () => {
         expect(tokenizer).to.be.defined
     })
-
+    
     it('should tokenize parenthesis', () => {
         let token = tokenizer('()')
         expect(token).to.deep.equal([
@@ -46,5 +65,4 @@ describe('tokenizer', () => {
             { type: 'paren', value: ')' },
         ])
     })
-
 })
