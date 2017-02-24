@@ -6,7 +6,7 @@ describe('parser', () => {
     let parser = null
 
     beforeEach(() => {
-        parser = require('./parser')
+        parser = require('../parser')
     })
 
     it('should exist', () => {

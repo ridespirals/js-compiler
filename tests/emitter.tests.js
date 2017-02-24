@@ -6,7 +6,7 @@ describe('emitter', () => {
     let emitter = null
 
     beforeEach(() => {
-        emitter = require('./emitter')
+        emitter = require('../emitter')
     })
 
     it('should exist', () => {
