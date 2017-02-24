@@ -10,4 +10,9 @@ const compiler = input => {
     return output
 }
 
-module.exports = compiler
+module.exports = {
+    compile: compiler,
+    tokenize: tokenizer,
+    parse: parser,
+    emit: emitter
+}
