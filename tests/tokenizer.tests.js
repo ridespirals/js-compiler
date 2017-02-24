@@ -6,13 +6,13 @@ describe('tokenizer', () => {
     let tokenizer = null
 
     beforeEach(() => {
-        tokenizer = require('../tokenizer')
+        tokenizer = require('../modules/tokenizer')
     })
-    
+
     it('should exist', () => {
         expect(tokenizer).to.be.defined
     })
-    
+
     it('should tokenize parenthesis', () => {
         const token = tokenizer('()')
         expect(token).to.deep.equal([

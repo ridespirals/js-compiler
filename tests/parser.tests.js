@@ -6,7 +6,7 @@ describe('parser', () => {
     let parser = null
 
     beforeEach(() => {
-        parser = require('../parser')
+        parser = require('../modules/parser')
     })
 
     it('should exist', () => {
@@ -24,9 +24,9 @@ describe('parser', () => {
         const result = parser(tokens)
         expect(result).to.deep.equal({
             type: 'Program',
-            body: [{ 
-                type: 'CallExpression', 
-                name: 'add', 
+            body: [{
+                type: 'CallExpression',
+                name: 'add',
                 params: [
                     { type: 'NumberLiteral', value: '2' },
                     { type: 'NumberLiteral', value: '3' }
@@ -44,8 +44,8 @@ describe('parser', () => {
           { type: 'name',   value: 'subtract' },
           { type: 'number', value: '4' },
           { type: 'string', value: '314' },
-          { type: 'paren',  value: ')' }, 
-          { type: 'paren',  value: ')' }, 
+          { type: 'paren',  value: ')' },
+          { type: 'paren',  value: ')' },
         ]
         const result = parser(tokens)
         expect(result).to.deep.equal({
@@ -55,8 +55,8 @@ describe('parser', () => {
                 name: 'add',
                 params: [
                     { type: 'NumberLiteral', value: '2' },
-                    { 
-                        type: 'CallExpression', 
+                    {
+                        type: 'CallExpression',
                         name: 'subtract',
                         params: [
                             { type: 'NumberLiteral', value: '4' },

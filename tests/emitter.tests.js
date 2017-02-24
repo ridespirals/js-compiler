@@ -6,7 +6,7 @@ describe('emitter', () => {
     let emitter = null
 
     beforeEach(() => {
-        emitter = require('../emitter')
+        emitter = require('../modules/emitter')
     })
 
     it('should exist', () => {
@@ -29,13 +29,13 @@ describe('emitter', () => {
         let result = emitter({ type: 'CallExpression', name: 'map', params: [] })
         expect(result).to.equal('map()')
 
-        result = emitter({ 
-            type: 'CallExpression', 
-            name: 'map', 
+        result = emitter({
+            type: 'CallExpression',
+            name: 'map',
             params: [
                 { type: 'NumberLiteral', value: '5' },
                 { type: 'StringLiteral', value: 'quux' }
-            ] 
+            ]
         })
         expect(result).to.equal(`map(5, "quux")`)
     })

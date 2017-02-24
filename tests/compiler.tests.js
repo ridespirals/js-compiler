@@ -6,7 +6,7 @@ describe('compiler', () => {
     let compiler = null
 
     beforeEach(() => {
-        compiler = require('../compiler')
+        compiler = require('../modules/compiler')
     })
 
     it('should exist', () => {
