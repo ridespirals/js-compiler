@@ -6,7 +6,7 @@ describe('tokenizer', () => {
     let tokenizer = null
 
     beforeEach(() => {
-        tokenizer = require('./tokenizer')
+        tokenizer = require('./tokenizer').tokenizer
     })
 
     it('should exist', () => {

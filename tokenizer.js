@@ -77,7 +77,10 @@ const tokenizer = (input) => {
     return tokens
 }
 
-module.exports = tokenizer
+module.exports = {
+    tokenizer: tokenizer,
+    tokenizers: tokenizers
+}
 
 
 // tester code
