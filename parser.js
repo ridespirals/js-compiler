@@ -13,7 +13,7 @@ const parseExpression = (tokens, current) => {
     }
     token = tokens[++current]
     while (!(token.type === 'paren' && token.value === ')')) {
-        [current, param] = parseToken(tokens, current)
+        let [current, param] = parseToken(tokens, current)
         node.params.push(param)
         token = tokens[current]
     }
@@ -37,10 +37,10 @@ const parseProgram = (tokens) => {
     }
     let node = null
     while (current < tokens.length) {
-        [current, node] = parseToken(tokens, current)
+        let [current, node] = parseToken(tokens, current)
         ast.body.push(node)
     }
     return ast
 }
 
-module.exports = parseProgram
+export default parseProgram

@@ -77,4 +77,4 @@ const tokenizer = (input) => {
     return tokens
 }
 
-module.exports = tokenizer
+export default tokenizer

@@ -1,6 +1,6 @@
-const tokenizer = require('./tokenizer')
-const parser = require('./parser')
-const emitter = require('./emitter')
+import tokenizer from './tokenizer'
+import parser from './parser'
+import emitter from './emitter'
 
 const compiler = input => {
     let tokens = tokenizer(input)
@@ -10,4 +10,4 @@ const compiler = input => {
     return output
 }
 
-module.exports = compiler
+export default compiler

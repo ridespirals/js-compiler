@@ -14,4 +14,4 @@ const emitter = node => {
     }
 }
 
-module.exports = emitter
+export default emitter
