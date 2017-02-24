@@ -1,25 +1,6 @@
 const chai = require('chai')
 const expect = chai.expect
 
-describe('tokenizer internals', () => {
-
-    let tokenizer = null
-    let tokenizers = null
-
-    beforeEach(() => {
-        const mod = require('./tokenizer')
-        tokenizer = mod.tokenizer
-        tokenizers = mod.tokenizers
-    })
-
-
-    it('should skip whitespace', () => {
-
-    })
-
-
-})
-
 describe('tokenizer', () => {
 
     let tokenizer = null
@@ -33,7 +14,7 @@ describe('tokenizer', () => {
     })
     
     it('should tokenize parenthesis', () => {
-        let token = tokenizer('()')
+        const token = tokenizer('()')
         expect(token).to.deep.equal([
             { type: 'paren', value: '(' },
             { type: 'paren', value: ')' }
@@ -41,7 +22,7 @@ describe('tokenizer', () => {
     })
 
     it('should tokenize a simple expression', () => {
-        let tokens = tokenizer('(add 2 3)')
+        const tokens = tokenizer('(add 2 3)')
         expect(tokens).to.deep.equal([
             { type: 'paren', value: '(' },
             { type: 'name', value: 'add' },
@@ -52,7 +33,7 @@ describe('tokenizer', () => {
     })
 
     it('should tokenize nested expressions', () => {
-        let tokens = tokenizer('(add 2 (subtract "314" 2))')
+        const tokens = tokenizer('(add 2 (subtract "314" 2))')
         expect(tokens).to.deep.equal([
             { type: 'paren', value: '(' },
             { type: 'name', value: 'add' },

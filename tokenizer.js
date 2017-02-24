@@ -78,19 +78,3 @@ const tokenizer = (input) => {
 }
 
 module.exports = tokenizer
-
-
-// tester code
-if (process.argv.includes('--test')) {
-    console.log('test paren open', tokenizeParenOpen('(', 0))
-    console.log('test paren close', tokenizeParenClose(')', 0))
-
-    console.log('test number', tokenizeNumber('123aad', 0))
-    console.log('test name', tokenizeName('hello world', 0))
-
-    console.log('test string', tokenizeString('"example text" trailing', 0))
-
-    console.log('----------------------------')
-    console.log('tokenizer test', tokenizer('(add 2 3)'))
-    console.log('nested expression', tokenizer('(add 2 (subtract "314" 2))'))
-}
