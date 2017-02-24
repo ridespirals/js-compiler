@@ -11,9 +11,3 @@ const compiler = input => {
 }
 
 module.exports = compiler
-
-//if (process.argv.includes('--test')) {
-    let program = "(add 1 2 (mult 3 4))"
-    console.log('compile:', program)
-    console.log('result:', compiler(program))
-//}
