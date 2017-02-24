@@ -4,7 +4,9 @@
   "description": "",
   "main": "compiler.js",
   "scripts": {
-    "test": "mocha *tests.js"
+    "test": "mocha *tests.js",
+    "test:watch": "mocha *tests.js --watch",
+    "start": "mocha *tests.js --watch"
   },
   "repository": {
     "type": "git",
