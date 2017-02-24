@@ -44,39 +44,3 @@ const parseProgram = (tokens) => {
 }
 
 module.exports = parseProgram
-
-
-if (process.argv.includes('--test')) {
-    let parser = parseProgram
-    console.log('test parseNumber', parseNumber([{type:'number',value:'123'}], 0))
-    console.log('test parseString', parseString([{type:'string', value:'example string'}], 0))
-
-    // test parse expression
-    const tokens = [
-        { type: 'paren', value: '(' },
-        { type: 'name', value: 'add' },
-        { type: 'number', value: '2' },
-        { type: 'number', value: '3' },
-        { type: 'paren', value: ')' },
-    ]
-    var result = parseExpression(tokens, 0)
-    console.log('test parse expression', result)
-    console.log('--', result[1].params)
-
-    // test nested expression
-    const nestedTokens =  [
-      { type: 'paren',  value: '('        },
-      { type: 'name',   value: 'add'      },
-      { type: 'number', value: '2'        },
-      { type: 'paren',  value: '('        },
-      { type: 'name',   value: 'subtract' },
-      { type: 'number', value: '4'        },
-      { type: 'number', value: '2'        },
-      { type: 'paren',  value: ')'        }, 
-      { type: 'paren',  value: ')'        }, 
-    ]
-    var nestedResult = parseExpression(nestedTokens, 0)
-    console.log('test nested expr', nestedResult)
-
-    console.log('parse program', parser(tokens))
-}
