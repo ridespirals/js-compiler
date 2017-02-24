@@ -1,8 +1,8 @@
 {
   "name": "js-compiler",
   "version": "1.0.0",
-  "description": "",
-  "main": "compiler.js",
+  "description": "Simple compiler that can translate Lisp-like syntax into C-like syntax",
+  "main": "index.js",
   "scripts": {
     "test": "mocha tests/**/*.js",
     "test:watch": "mocha tests/**/*.js --watch",
